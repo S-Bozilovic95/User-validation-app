@@ -1,4 +1,4 @@
-.users {
+.users-list-box {
   padding: 20px 10px;
   background-color: white;
   border-radius: 10px;
@@ -8,7 +8,7 @@
 }
 
 @media (max-width: 768px) {
-  .users {
+  .users-list-box {
     max-width: 100%;
   }
 }

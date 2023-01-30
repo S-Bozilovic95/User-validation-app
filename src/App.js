@@ -1,22 +1,16 @@
 import React, { useState } from "react";
 import ErrorMessage from "./components/ErrorMessage/ErrorMessage";
 import NewUserForm from "./components/NewUser/NewUserForm";
-import Users from "./components/Users/Users";
+import UsersList from "./components/Users/UsersList";
 
 function App() {
   const [users, setUsers] = useState([]);
   const [errorType, setErrorType] = useState("none");
 
   const addUserHandler = (newUser) => {
-    if (newUser.name.trim().length === 0) {
-      return errorTypeHandler("empty");
-    } else if (newUser.age <= 0) {
-      return errorTypeHandler("age");
-    } else {
-      setUsers((prevUsers) => {
-        return [newUser, ...prevUsers];
-      });
-    }
+    setUsers((prevUsers) => {
+      return [...prevUsers, newUser];
+    });
   };
 
   const errorTypeHandler = (type) => {
@@ -29,7 +23,7 @@ function App() {
         onAddUser={addUserHandler}
         errorTypeHandler={errorTypeHandler}
       />
-      {users.length > 0 && <Users allUsers={users} />}
+      {users.length > 0 && <UsersList allUsers={users} />}
       {errorType === "age" ? (
         <ErrorMessage
           messageText={"Please enter a valid age (>0)"}

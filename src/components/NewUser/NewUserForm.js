@@ -21,9 +21,17 @@ const NewUserForm = ({ onAddUser, errorTypeHandler }) => {
 
     const newUser = {
       name: enteredName,
-      age: +enteredAge,
+      age: enteredAge,
       id: Math.random().toString(),
     };
+
+    if (enteredName.trim().length === 0 || enteredAge.trim().length === 0) {
+      return errorTypeHandler("empty");
+    }
+
+    if (+enteredAge < 0) {
+      return errorTypeHandler("age");
+    }
 
     onAddUser(newUser);
     setEnteredName("");

@@ -1,23 +1,13 @@
 import styles from "./Button.module.css";
 
-const Button = ({ type, text, closeFn }) => {
+const Button = ({ type, text }) => {
   return (
-    <>
-      {type === "button" && (
-        <button
-          className={styles["button-message"]}
-          type={type}
-          onClick={() => closeFn("none")}
-        >
-          {text}
-        </button>
-      )}
-      {type === "submit" && (
-        <button className={styles.button} type={type}>
-          {text}
-        </button>
-      )}
-    </>
+    <button
+      className={type === "button" ? styles["button-message"] : styles.button}
+      type={type}
+    >
+      {text}
+    </button>
   );
 };
 

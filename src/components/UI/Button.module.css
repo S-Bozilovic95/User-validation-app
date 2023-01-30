@@ -1,0 +1,28 @@
+.button {
+  padding: 5px 10px;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  background-color: rgb(49, 2, 94);
+  transition: 0.15s ease-out;
+}
+
+.button-message {
+  padding: 5px 10px;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  background-color: rgb(49, 2, 94);
+  transition: 0.15s ease-out;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}
+
+.button:hover {
+  transition: 0.15s ease-in;
+  cursor: pointer;
+  background-color: rgb(89, 9, 163);
+}

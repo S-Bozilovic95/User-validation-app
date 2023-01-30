@@ -1,0 +1,14 @@
+.users {
+  padding: 20px 10px;
+  background-color: white;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 100%;
+  margin: auto;
+}
+
+@media (max-width: 768px) {
+  .users {
+    max-width: 100%;
+  }
+}
